@@ -8,29 +8,29 @@ const up = (d = 0) => ({
 });
 
 const problems = [
-  { icon: Cloud, label: 'Model Drift', desc: 'Behavior shifts silently between versions', color: '#f87171' },
-  { icon: AlertTriangle, label: 'Noisy Retrieval', desc: 'RAG returns irrelevant or conflicting context', color: '#fb923c' },
-  { icon: Wrench, label: 'Tool Failures', desc: 'APIs break, schemas change, timeouts spike', color: '#facc15' },
-  { icon: Brain, label: 'Edge Cases', desc: 'Real users find paths you never imagined', color: '#f472b6' },
-  { icon: RefreshCw, label: 'Hidden Logic', desc: 'Prompts become undocumented business rules', color: '#a855f7' },
+  { icon: Cloud, label: 'Model Drift', desc: 'Behavior shifts silently between versions' },
+  { icon: AlertTriangle, label: 'Noisy Retrieval', desc: 'RAG returns irrelevant or conflicting context' },
+  { icon: Wrench, label: 'Tool Failures', desc: 'APIs break, schemas change, timeouts spike' },
+  { icon: Brain, label: 'Edge Cases', desc: 'Real users find paths you never imagined' },
+  { icon: RefreshCw, label: 'Hidden Logic', desc: 'Prompts become undocumented business rules' },
 ];
 
 const terminalLines = [
   { t: '$ deploy agent-v2 --prod', c: '#94a3b8' },
-  { t: 'Building........ OK', c: '#34d399' },
-  { t: 'Tests........... 47/47 passed', c: '#34d399' },
+  { t: 'Building........ OK', c: '#fd9c27' },
+  { t: 'Tests........... 47/47 passed', c: '#fd9c27' },
   { t: '', c: '' },
-  { t: '[WARN] context overflow on 12% of requests', c: '#facc15' },
-  { t: '[ERR]  hallucinated tool: delete_user()', c: '#f87171' },
-  { t: '[ERR]  retrieval returned competitor docs', c: '#f87171' },
-  { t: '[CRIT] task failure rate: 23% → 41%', c: '#ef4444' },
+  { t: '[WARN] context overflow on 12% of requests', c: '#fdc855' },
+  { t: '[ERR]  hallucinated tool: delete_user()', c: '#df179e' },
+  { t: '[ERR]  retrieval returned competitor docs', c: '#df179e' },
+  { t: '[CRIT] task failure rate: 23% → 41%', c: '#f96219' },
 ];
 
 export function ProblemSlide() {
   return (
     <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden"
       style={{ padding: 'clamp(2rem, 4vh, 4rem) clamp(3rem, 5vw, 7rem)' }}>
-      <GradientOrb color="rgba(248,113,113,0.12)" size={800} x="75%" y="20%" />
+      <GradientOrb color="rgba(223,23,158,0.11)" size={800} x="75%" y="20%" />
 
       <motion.h2 {...up(0.05)}
         className="relative z-10 text-5xl md:text-6xl font-black text-center mb-4 leading-tight max-w-5xl">
@@ -61,7 +61,8 @@ export function ProblemSlide() {
                 {l.t || '\u00A0'}
               </motion.div>
             ))}
-            <motion.span className="inline-block w-2 h-4 bg-neon-green/60 mt-1"
+            <motion.span className="inline-block w-2 h-4 mt-1"
+              style={{ backgroundColor: 'rgba(249,98,25,0.6)' }}
               animate={{ opacity: [1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} />
           </div>
         </motion.div>
@@ -74,13 +75,13 @@ export function ProblemSlide() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 + i * 0.1, duration: 0.45 }}
-              whileHover={{ scale: 1.015, boxShadow: `0 0 30px ${p.color}15` }}>
+              whileHover={{ scale: 1.015, boxShadow: '0 0 24px rgba(255,255,255,0.05)' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: `${p.color}15` }}>
-                <p.icon size={24} style={{ color: p.color }} />
+                style={{ background: 'rgba(255,255,255,0.08)' }}>
+                <p.icon size={24} className="text-white/85" />
               </div>
               <div>
-                <h3 className="text-lg font-bold" style={{ color: p.color }}>{p.label}</h3>
+                <h3 className="text-lg font-bold text-white/90">{p.label}</h3>
                 <p className="text-base text-text-secondary">{p.desc}</p>
               </div>
             </motion.div>

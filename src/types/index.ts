@@ -11,6 +11,7 @@ export type SlideType =
   | 'dspy-gepa'
   | 'google-ecosystem'
   | 'resilient'
+  | 'advanced-tracks'
   | 'closing';
 
 export interface SlideLink {

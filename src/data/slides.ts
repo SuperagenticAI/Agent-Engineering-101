@@ -3,8 +3,12 @@ import type { SlideData } from '../types';
 export const SPEAKER = {
   name: 'Shashi Jagtap',
   bio: 'Shashi Jagtap is the Founder of Superagentic AI and a former Apple engineer with nearly 20 years of experience in software engineering. He focuses on Agent Engineering, building reliable, evaluation-driven AI systems for real-world applications. As organizer of the London Agentic AI community, he brings together engineers advancing the next generation of production-ready AI systems.',
+  summary: 'Founder of Superagentic AI, former Apple engineer, and agent engineering practitioner focused on reliable, evaluation-driven AI systems. He also organizes the London Agentic AI community.',
   x: 'https://x.com/Shashikant86',
   linkedin: 'https://www.linkedin.com/in/shashikantjagtap/',
+  image: '/shashi-speaker.jpg',
+  xAvatar: 'https://unavatar.io/twitter/Shashikant86',
+  linkedinAvatar: 'https://unavatar.io/shashikantjagtap',
 };
 
 export const EVENT = {
@@ -41,8 +45,8 @@ export const DISCIPLINES = [
 export const slides: SlideData[] = [
   { id: 1, type: 'hero', section: 'Intro', title: 'Agent Engineering 101: How to Build Reliable AI Systems', subtitle: 'From prompt tinkering to production-ready AI systems' },
   { id: 2, type: 'speaker', section: 'Intro', title: 'About the Speaker' },
-  { id: 3, type: 'problem', section: 'Problem', title: 'Everyone is building with AI. Most demos break in production.' },
-  { id: 4, type: 'what-is-agent', section: 'Problem', title: 'An agent is not just a prompt. It is a system.' },
+  { id: 3, type: 'what-is-agent', section: 'Problem', title: 'An agent is not just a prompt. It is a system.' },
+  { id: 4, type: 'problem', section: 'Problem', title: 'Everyone is building with AI. Most demos break in production.' },
   { id: 5, type: 'how-we-build', section: 'Current State', title: 'How teams are building agents right now' },
   { id: 6, type: 'tinkering-breaks', section: 'Current State', title: 'Why prompts alone are not enough' },
   { id: 7, type: 'why-engineering', section: 'Engineering', title: 'Agent Engineering is the shift from tinkering to systems thinking' },
@@ -51,5 +55,6 @@ export const slides: SlideData[] = [
   { id: 10, type: 'dspy-gepa', section: 'Frameworks', title: 'Programming and optimizing AI systems systematically' },
   { id: 11, type: 'google-ecosystem', section: 'Frameworks', title: "Google's ecosystem for building production agents" },
   { id: 12, type: 'resilient', section: 'Action', title: 'Practical rules for building reliable AI systems' },
-  { id: 13, type: 'closing', section: 'Action', title: 'Reliable AI systems are engineered, not merely prompted' },
+  { id: 13, type: 'advanced-tracks', section: 'Action', title: 'Future Proof' },
+  { id: 14, type: 'closing', section: 'Action', title: 'Reliable AI systems are engineered, not merely prompted' },
 ];
