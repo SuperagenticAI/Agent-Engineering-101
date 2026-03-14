@@ -12,6 +12,7 @@ import { DSPyGEPASlide } from './slides/DSPyGEPASlide';
 import { GoogleEcosystemSlide } from './slides/GoogleEcosystemSlide';
 import { ResilientSlide } from './slides/ResilientSlide';
 import { AdvancedTracksSlide } from './slides/AdvancedTracksSlide';
+import { AgenticFutureSlide } from './slides/AgenticFutureSlide';
 import { ClosingSlide } from './slides/ClosingSlide';
 
 interface SlideRendererProps {
@@ -34,6 +35,7 @@ export function SlideRenderer({ slide, onStart }: SlideRendererProps) {
     case 'google-ecosystem': return <GoogleEcosystemSlide />;
     case 'resilient': return <ResilientSlide />;
     case 'advanced-tracks': return <AdvancedTracksSlide />;
+    case 'agentic-future': return <AgenticFutureSlide />;
     case 'closing': return <ClosingSlide />;
     default: return null;
   }

@@ -1,12 +1,14 @@
 import type { SlideData } from '../types';
 
+const PUBLIC_ASSET_BASE = import.meta.env.BASE_URL;
+
 export const SPEAKER = {
   name: 'Shashi Jagtap',
   bio: 'Shashi Jagtap is the Founder of Superagentic AI and a former Apple engineer with nearly 20 years of experience in software engineering. He focuses on Agent Engineering, building reliable, evaluation-driven AI systems for real-world applications. As organizer of the London Agentic AI community, he brings together engineers advancing the next generation of production-ready AI systems.',
   summary: 'Founder of Superagentic AI, former Apple engineer, and agent engineering practitioner focused on reliable, evaluation-driven AI systems. He also organizes the London Agentic AI community.',
   x: 'https://x.com/Shashikant86',
   linkedin: 'https://www.linkedin.com/in/shashikantjagtap/',
-  image: '/shashi-speaker.jpg',
+  image: `${PUBLIC_ASSET_BASE}shashi-speaker.jpg`,
   xAvatar: 'https://unavatar.io/twitter/Shashikant86',
   linkedinAvatar: 'https://unavatar.io/shashikantjagtap',
 };
@@ -56,5 +58,6 @@ export const slides: SlideData[] = [
   { id: 11, type: 'google-ecosystem', section: 'Frameworks', title: "Google's ecosystem for building production agents" },
   { id: 12, type: 'resilient', section: 'Action', title: 'Practical rules for building reliable AI systems' },
   { id: 13, type: 'advanced-tracks', section: 'Action', title: 'Future Proof' },
-  { id: 14, type: 'closing', section: 'Action', title: 'Reliable AI systems are engineered, not merely prompted' },
+  { id: 14, type: 'agentic-future', section: 'Action', title: 'Steering the Agentic Future' },
+  { id: 15, type: 'closing', section: 'Action', title: 'Reliable AI systems are engineered, not merely prompted' },
 ];

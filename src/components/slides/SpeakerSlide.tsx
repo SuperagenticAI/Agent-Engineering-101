@@ -27,11 +27,6 @@ export function SpeakerSlide() {
               alt={`${SPEAKER.name} profile`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 px-4 pb-5 pt-8 bg-gradient-to-t from-black/85 via-black/35 to-transparent">
-              <span className="block text-[11px] leading-none font-mono text-white/90 uppercase tracking-[0.14em]">
-                Speaker
-              </span>
-            </div>
           </motion.div>
 
           <div className="glass-sm w-full p-4 space-y-3">
@@ -61,10 +56,6 @@ export function SpeakerSlide() {
         </motion.div>
 
         <div className="min-w-0 flex-1">
-          <motion.p {...up(0.12)} className="mb-3 text-sm uppercase tracking-[0.28em] text-text-secondary">
-            Speaker
-          </motion.p>
-
           <motion.h2 {...up(0.15)} className="text-5xl md:text-6xl font-black mb-4 leading-tight">
             {SPEAKER.name}
           </motion.h2>
