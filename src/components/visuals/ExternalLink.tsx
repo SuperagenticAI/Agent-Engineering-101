@@ -12,7 +12,8 @@ export function ExternalLink({ href, children, className = '' }: ExternalLinkPro
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 text-cyan-300/80 hover:text-cyan-200 transition-colors underline-offset-4 hover:underline ${className}`}
+      className={`inline-flex items-center gap-2 text-white hover:text-white transition-colors underline-offset-4 hover:underline ${className}`}
+      style={{ opacity: 0.75 }}
     >
       {children}
       <LinkIcon size={14} className="opacity-50" />

@@ -3,104 +3,104 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --color-bg-primary: #030712;
-  --color-bg-secondary: #0a0f1a;
+  --color-bg-primary: #080808;
+  --color-bg-secondary: #0f0f0f;
   --color-bg-glass: rgba(255, 255, 255, 0.04);
   --color-bg-glass-strong: rgba(255, 255, 255, 0.07);
-  --color-border-glass: rgba(255, 255, 255, 0.09);
-  --color-border-bright: rgba(255, 255, 255, 0.18);
-  --color-neon-blue: #38bdf8;
-  --color-neon-cyan: #22d3ee;
-  --color-neon-purple: #a78bfa;
-  --color-neon-violet: #8b5cf6;
-  --color-neon-green: #34d399;
-  --color-neon-emerald: #10b981;
-  --color-neon-pink: #f472b6;
-  --color-neon-orange: #fb923c;
-  --color-neon-red: #f87171;
-  --color-neon-yellow: #fbbf24;
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-border-glass: rgba(255, 255, 255, 0.10);
+  --color-border-bright: rgba(255, 255, 255, 0.22);
+  --color-neon-blue: #ffffff;
+  --color-neon-cyan: #e8e8e8;
+  --color-neon-purple: #d0d0d0;
+  --color-neon-violet: #b8b8b8;
+  --color-neon-green: #ffffff;
+  --color-neon-emerald: #e0e0e0;
+  --color-neon-pink: #c8c8c8;
+  --color-neon-orange: #f0f0f0;
+  --color-neon-red: #b0b0b0;
+  --color-neon-yellow: #f8f8f8;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d4d4d4;
+  --color-text-muted: #a3a3a3;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body, #root {
   height: 100%; width: 100%; overflow: hidden;
-  background: #030712;
+  background: #080808;
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: rgba(56,189,248,0.25); color: #fff; }
+::selection { background: rgba(255,255,255,0.20); color: #fff; }
 ::-webkit-scrollbar { display: none; }
 
 /* ─── Glass ─────────────────────────────── */
 .glass {
-  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  backdrop-filter: blur(24px) saturate(1.2);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+  backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 24px;
 }
 .glass-sm {
-  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  background: linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 16px;
 }
 .glass-strong {
-  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-  backdrop-filter: blur(28px) saturate(1.3);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+  backdrop-filter: blur(28px) saturate(1.15);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 24px;
 }
 
 /* ─── Glow ──────────────────────────────── */
-.neon-glow-blue  { box-shadow: 0 0 24px rgba(56,189,248,0.15), 0 0 80px rgba(56,189,248,0.05); }
-.neon-glow-purple{ box-shadow: 0 0 24px rgba(167,139,250,0.15), 0 0 80px rgba(167,139,250,0.05); }
-.neon-glow-green { box-shadow: 0 0 24px rgba(52,211,153,0.15), 0 0 80px rgba(52,211,153,0.05); }
+.neon-glow-blue  { box-shadow: 0 0 28px rgba(255,255,255,0.08), 0 0 80px rgba(255,255,255,0.03); }
+.neon-glow-purple{ box-shadow: 0 0 28px rgba(255,255,255,0.08), 0 0 80px rgba(255,255,255,0.03); }
+.neon-glow-green { box-shadow: 0 0 28px rgba(255,255,255,0.08), 0 0 80px rgba(255,255,255,0.03); }
 
 /* ─── Gradient text ─────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #fbbf24, #a78bfa 52%, #ec4899);
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .gradient-text-green {
-  background: linear-gradient(135deg, #34d399, #22d3ee);
+  background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .gradient-text-fire {
-  background: linear-gradient(135deg, #fb923c, #f87171, #ec4899);
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .gradient-text-gold {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #ffffff 0%, #c8c8c8 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
 /* ─── Code blocks ───────────────────────── */
 .code-block {
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 16px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.8;
   padding: 1.5rem;
   overflow-x: auto;
 }
-.code-block .kw  { color: #c084fc; }   /* keyword: purple */
-.code-block .fn  { color: #fbbf24; }   /* function: amber */
-.code-block .cls { color: #38bdf8; }   /* class: sky */
-.code-block .str { color: #34d399; }   /* string: emerald */
-.code-block .cmt { color: #475569; }   /* comment: slate */
-.code-block .op  { color: #94a3b8; }   /* operator */
-.code-block .var { color: #e2e8f0; }   /* variable */
+.code-block .kw  { color: #e0e0e0; }   /* keyword */
+.code-block .fn  { color: #d0d0d0; }   /* function */
+.code-block .cls { color: #f0f0f0; }   /* class */
+.code-block .str { color: #b8b8b8; }   /* string */
+.code-block .cmt { color: #404040; }   /* comment */
+.code-block .op  { color: #808080; }   /* operator */
+.code-block .var { color: #e8e8e8; }   /* variable */
 
 /* ─── Accent bar ────────────────────────── */
 .accent-bar {
   position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; border-radius: 24px 24px 0 0;
+  height: 2px; border-radius: 24px 24px 0 0;
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 interface Node {
   x: number; y: number; vx: number; vy: number;
-  radius: number; hue: number; pulse: number; pulseSpeed: number;
+  radius: number; pulse: number; pulseSpeed: number;
 }
 
 export function AnimatedCanvas() {
@@ -17,8 +17,8 @@ export function AnimatedCanvas() {
     let id: number;
     let w = 0, h = 0;
     const nodes: Node[] = [];
-    const N = 45;
-    const DIST = 160;
+    const N = 40;
+    const DIST = 150;
 
     function resize() {
       w = c!.width = window.innerWidth;
@@ -32,12 +32,11 @@ export function AnimatedCanvas() {
         nodes.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: Math.random() * 1.5 + 0.8,
-          hue: [190, 270, 330, 160][Math.floor(Math.random() * 4)],
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          radius: Math.random() * 1.2 + 0.6,
           pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: Math.random() * 0.015 + 0.008,
+          pulseSpeed: Math.random() * 0.012 + 0.006,
         });
       }
     }
@@ -51,12 +50,12 @@ export function AnimatedCanvas() {
           const dy = nodes[i].y - nodes[j].y;
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < DIST) {
-            const a = (1 - d / DIST) * 0.08;
+            const a = (1 - d / DIST) * 0.07;
             ctx!.beginPath();
             ctx!.moveTo(nodes[i].x, nodes[i].y);
             ctx!.lineTo(nodes[j].x, nodes[j].y);
-            ctx!.strokeStyle = `rgba(100, 180, 255, ${a})`;
-            ctx!.lineWidth = 0.5;
+            ctx!.strokeStyle = `rgba(255, 255, 255, ${a})`;
+            ctx!.lineWidth = 0.4;
             ctx!.stroke();
           }
         }
@@ -68,13 +67,13 @@ export function AnimatedCanvas() {
         const r = n.radius * (1 + p * 0.3);
 
         ctx!.beginPath();
-        ctx!.arc(n.x, n.y, r * 6, 0, Math.PI * 2);
-        ctx!.fillStyle = `hsla(${n.hue}, 80%, 65%, ${0.06 * p})`;
+        ctx!.arc(n.x, n.y, r * 5, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(255, 255, 255, ${0.03 * p})`;
         ctx!.fill();
 
         ctx!.beginPath();
         ctx!.arc(n.x, n.y, r, 0, Math.PI * 2);
-        ctx!.fillStyle = `hsla(${n.hue}, 80%, 70%, ${0.4 + 0.3 * p})`;
+        ctx!.fillStyle = `rgba(255, 255, 255, ${0.35 + 0.25 * p})`;
         ctx!.fill();
 
         n.x += n.vx;
@@ -95,7 +94,7 @@ export function AnimatedCanvas() {
     <canvas
       ref={ref}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.3 }}
+      style={{ zIndex: 0, opacity: 0.18 }}
     />
   );
 }
