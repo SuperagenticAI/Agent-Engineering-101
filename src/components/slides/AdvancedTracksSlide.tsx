@@ -14,7 +14,7 @@ const tracks = [
     icon: LayoutTemplate,
     eyebrow: '--design-ax',
     title: 'Agent Experience (AX)',
-    text: 'Designing machine-readable interfaces, environments, and feedback loops that shape how agents operate.',
+    text: 'Build for agents make them efficenent',
   },
   {
     icon: Code2,
