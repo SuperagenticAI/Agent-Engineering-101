@@ -11,13 +11,13 @@ interface GlassCardProps {
 export function GlassCard({ children, className = '', glowColor, delay = 0 }: GlassCardProps) {
   return (
     <motion.div
-      className={`glass p-7 ${className}`}
+      className={`glass p-8 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       whileHover={
         glowColor
-          ? { boxShadow: `0 0 35px ${glowColor}`, scale: 1.02 }
+          ? { boxShadow: `0 0 40px ${glowColor}`, scale: 1.02 }
           : { scale: 1.02 }
       }
     >

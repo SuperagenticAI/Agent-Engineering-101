@@ -9,7 +9,7 @@ export function ProgressBar({ current, total }: ProgressBarProps) {
   const progress = (current / total) * 100;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-white/[0.03]">
+    <div className="fixed top-0 left-0 right-0 z-50 h-[2px] bg-white/[0.04]">
       <motion.div
         className="h-full relative"
         style={{
