@@ -31,8 +31,7 @@ export function AgenticFutureSlide() {
       <motion.h2 variants={item}
         className="relative z-10 text-5xl md:text-6xl font-black text-center mb-4 leading-tight max-w-5xl"
       >
-        Steering the{' '}
-        <span className="gradient-text">Agentic Future</span>
+        <span className="gradient-text">Long Live Agent Engineering</span>
       </motion.h2>
 
       <motion.p variants={item} className="relative z-10 text-xl text-text-secondary text-center mb-12 max-w-4xl">

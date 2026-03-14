@@ -58,6 +58,6 @@ export const slides: SlideData[] = [
   { id: 11, type: 'google-ecosystem', section: 'Frameworks', title: "Google's ecosystem for building production agents" },
   { id: 12, type: 'resilient', section: 'Action', title: 'Practical rules for building reliable AI systems' },
   { id: 13, type: 'advanced-tracks', section: 'Action', title: 'Future Proof' },
-  { id: 14, type: 'agentic-future', section: 'Action', title: 'Steering the Agentic Future' },
+  { id: 14, type: 'agentic-future', section: 'Action', title: 'Long Live Agent Engineering' },
   { id: 15, type: 'closing', section: 'Action', title: 'Reliable AI systems are engineered, not merely prompted' },
 ];
