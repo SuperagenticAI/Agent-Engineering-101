@@ -10,7 +10,7 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.15 },
   },
 };
 
@@ -27,7 +27,7 @@ export function SlideLayout({ children, className = '' }: SlideLayoutProps) {
   return (
     <motion.div
       className={`relative h-full w-full flex flex-col items-center justify-center overflow-hidden ${className}`}
-      style={{ padding: 'clamp(2rem, 5vh, 5rem) clamp(3rem, 6vw, 8rem)' }}
+      style={{ padding: 'clamp(3rem, 6vh, 6rem) clamp(4rem, 8vw, 10rem)' }}
       variants={container}
       initial="hidden"
       animate="show"

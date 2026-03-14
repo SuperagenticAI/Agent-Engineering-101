@@ -16,37 +16,46 @@ const rules = [
   { icon: TrendingUp, text: 'Optimize with evidence', detail: 'Use measurement and iteration, not guesswork' },
 ];
 
+const ruleColors = [
+  '#38bdf8', '#a78bfa', '#f472b6', '#34d399',
+  '#fb923c', '#22d3ee', '#fbbf24', '#34d399',
+];
+
 export function ResilientSlide() {
   return (
     <SlideLayout>
-      <GradientOrb color="rgba(255,255,255,0.04)" size={700} x="50%" y="45%" />
+      <GradientOrb color="rgba(52,211,153,0.06)" size={700} x="50%" y="45%" />
 
-      <motion.h2 variants={item} className="relative z-10 text-5xl md:text-6xl font-black text-center mb-4 leading-tight max-w-4xl">
+      <motion.h2 variants={item} className="relative z-10 text-5xl md:text-6xl font-black text-center mb-5 leading-tight max-w-4xl">
         A practical <span className="gradient-text-green">playbook</span> for reliable agents
       </motion.h2>
 
-      <motion.p variants={item} className="relative z-10 text-xl text-text-secondary text-center mb-14 max-w-xl">
-        The engineering habits that matter once agents leave the demo and enter production.
+      <motion.p variants={item} className="relative z-10 text-xl md:text-2xl text-text-secondary text-center mb-14">
+        The engineering habits that matter once agents enter production.
       </motion.p>
 
-      <motion.div variants={item} className="relative z-10 grid grid-cols-2 gap-4 max-w-5xl w-full">
+      <motion.div variants={item} className="relative z-10 grid grid-cols-2 gap-5 max-w-5xl w-full">
         {rules.map((rule, i) => (
           <motion.div
             key={i}
-            className="glass-sm px-6 py-5 flex items-center gap-5 cursor-default group"
+            className="glass-sm px-7 py-5 flex items-center gap-5 cursor-default group"
             initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 + i * 0.07, duration: 0.45 }}
-            whileHover={{ scale: 1.02, boxShadow: '0 0 24px rgba(255,255,255,0.05)' }}
+            whileHover={{ scale: 1.02, boxShadow: `0 0 24px ${ruleColors[i]}10` }}
           >
-            <motion.div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 bg-white/8" whileHover={{ rotate: 8, scale: 1.1 }}>
-              <rule.icon size={22} className="text-white/90" />
+            <motion.div
+              className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+              style={{ background: `${ruleColors[i]}12` }}
+              whileHover={{ rotate: 8, scale: 1.1 }}
+            >
+              <rule.icon size={22} style={{ color: ruleColors[i] }} />
             </motion.div>
             <div className="min-w-0">
               <h3 className="text-lg font-bold group-hover:text-white transition-colors">{rule.text}</h3>
-              <p className="text-base text-text-muted">{rule.detail}</p>
+              <p className="text-base text-text-muted mt-0.5">{rule.detail}</p>
             </div>
-            <span className="ml-auto text-sm font-mono font-bold opacity-20 shrink-0 text-white/60">
+            <span className="ml-auto text-sm font-mono font-bold opacity-20 shrink-0" style={{ color: ruleColors[i] }}>
               {String(i + 1).padStart(2, '0')}
             </span>
           </motion.div>

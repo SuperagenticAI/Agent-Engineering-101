@@ -95,7 +95,7 @@ export function AnimatedCanvas() {
     <canvas
       ref={ref}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.25 }}
+      style={{ zIndex: 0, opacity: 0.3 }}
     />
   );
 }

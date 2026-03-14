@@ -19,36 +19,36 @@ const parts = [
 export function WhatIsAgentSlide() {
   return (
     <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden"
-      style={{ padding: 'clamp(2rem, 4vh, 4rem) clamp(3rem, 5vw, 7rem)' }}>
-      <GradientOrb color="rgba(255,255,255,0.04)" size={800} x="50%" y="40%" />
+      style={{ padding: 'clamp(3rem, 5vh, 5rem) clamp(4rem, 6vw, 8rem)' }}>
+      <GradientOrb color="rgba(167,139,250,0.06)" size={800} x="50%" y="40%" />
 
-      <motion.h2 {...up(0.05)} className="relative z-10 text-5xl md:text-6xl font-black text-center mb-4 leading-tight max-w-4xl">
+      <motion.h2 {...up(0.05)} className="relative z-10 text-5xl md:text-6xl font-black text-center mb-5 leading-tight max-w-4xl">
         An agent is not just a prompt.
         <br /><span className="gradient-text">It is a system.</span>
       </motion.h2>
 
-      <motion.p {...up(0.15)} className="relative z-10 text-xl text-text-secondary text-center mb-16">
+      <motion.p {...up(0.15)} className="relative z-10 text-xl md:text-2xl text-text-secondary text-center mb-20">
         A goal-driven runtime with models, tools, memory, and evaluation in a control loop.
       </motion.p>
 
-      <motion.div {...up(0.25)} className="relative z-10 flex items-center gap-8 max-w-5xl w-full justify-center">
+      <motion.div {...up(0.25)} className="relative z-10 flex items-center gap-10 max-w-5xl w-full justify-center">
         <div className="glass p-6 text-center w-28 shrink-0">
           <div className="text-4xl mb-2">👤</div>
           <span className="font-mono text-sm font-bold">User</span>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2.5">
           {[0, 1, 2].map((i) => (
-            <motion.div key={i} className="w-2.5 h-2.5 rounded-full bg-white/70" animate={{ opacity: [0.2, 1, 0.2], scale: [0.6, 1, 0.6] }} transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.25 }} />
+            <motion.div key={i} className="w-2.5 h-2.5 rounded-full bg-cyan-400/60" animate={{ opacity: [0.2, 1, 0.2], scale: [0.6, 1, 0.6] }} transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.25 }} />
           ))}
         </div>
 
-        <div className="glass-strong p-8 flex-1 max-w-2xl relative overflow-hidden">
-          <div className="accent-bar bg-white/60" />
-          <h3 className="text-lg font-black text-white font-mono tracking-widest text-center mb-6 mt-1">
+        <div className="glass-strong p-10 flex-1 max-w-2xl relative overflow-hidden">
+          <div className="accent-bar" style={{ background: 'linear-gradient(90deg, #38bdf8, #a78bfa, #ec4899)' }} />
+          <h3 className="text-lg font-black text-white font-mono tracking-widest text-center mb-8 mt-1">
             AGENT RUNTIME
           </h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-5">
             {parts.map((p, i) => (
               <motion.div
                 key={p.label}
@@ -56,10 +56,10 @@ export function WhatIsAgentSlide() {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.55 + i * 0.08, type: 'spring', stiffness: 200 }}
-                whileHover={{ scale: 1.08, boxShadow: '0 0 20px rgba(255,255,255,0.05)' }}
+                whileHover={{ scale: 1.08, boxShadow: '0 0 24px rgba(167,139,250,0.1)' }}
               >
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-2 bg-white/8">
-                  <p.icon size={22} className="text-white/90" />
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-3 bg-white/8">
+                  <p.icon size={22} className="text-purple-300/90" />
                 </div>
                 <span className="text-sm font-bold">{p.label}</span>
               </motion.div>
@@ -67,9 +67,9 @@ export function WhatIsAgentSlide() {
           </div>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2.5">
           {[0, 1, 2].map((i) => (
-            <motion.div key={i} className="w-2.5 h-2.5 rounded-full bg-white/70" animate={{ opacity: [0.2, 1, 0.2], scale: [0.6, 1, 0.6] }} transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.25 }} />
+            <motion.div key={i} className="w-2.5 h-2.5 rounded-full bg-emerald-400/60" animate={{ opacity: [0.2, 1, 0.2], scale: [0.6, 1, 0.6] }} transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.25 }} />
           ))}
         </div>
 
@@ -79,14 +79,14 @@ export function WhatIsAgentSlide() {
         </div>
       </motion.div>
 
-      <motion.div {...up(0.7)} className="relative z-10 mt-10 flex items-center gap-3 font-mono text-sm">
+      <motion.div {...up(0.7)} className="relative z-10 mt-14 flex items-center gap-4 font-mono text-sm">
         {['observe', 'decide', 'act', 'evaluate'].map((s, i) => (
-          <span key={s} className="flex items-center gap-3">
-            <span className="glass-sm px-4 py-2 font-bold text-text-secondary">{s}</span>
-            {i < 3 && <span className="text-white/70 text-lg">→</span>}
+          <span key={s} className="flex items-center gap-4">
+            <span className="glass-sm px-5 py-2.5 font-bold text-text-secondary">{s}</span>
+            {i < 3 && <span className="text-cyan-400/60 text-lg">→</span>}
           </span>
         ))}
-        <span className="text-white/70 font-bold text-lg ml-2">↻</span>
+        <span className="text-cyan-400/60 font-bold text-lg ml-3">↻</span>
       </motion.div>
     </div>
   );

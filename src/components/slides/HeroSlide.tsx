@@ -107,14 +107,14 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
 
   return (
     <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden">
-      <GradientOrb color="rgba(56,189,248,0.16)" size={1000} x="8%" y="18%" />
-      <GradientOrb color="rgba(244,114,182,0.13)" size={920} x="92%" y="82%" delay={1} />
-      <GradientOrb color="rgba(250,204,21,0.11)" size={760} x="82%" y="24%" delay={0.6} />
+      <GradientOrb color="rgba(56,189,248,0.13)" size={1000} x="8%" y="18%" />
+      <GradientOrb color="rgba(244,114,182,0.10)" size={920} x="92%" y="82%" delay={1} />
+      <GradientOrb color="rgba(250,204,21,0.08)" size={760} x="82%" y="24%" delay={0.6} />
 
-      <div className="absolute inset-0 pointer-events-none opacity-[0.08]"
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
-          backgroundImage: 'linear-gradient(rgba(125,211,252,0.34) 1px, transparent 1px), linear-gradient(90deg, rgba(192,132,252,0.3) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+          backgroundImage: 'linear-gradient(rgba(56,189,248,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.25) 1px, transparent 1px)',
+          backgroundSize: '90px 90px',
         }}
       />
 
@@ -125,7 +125,7 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
           y: [0, -4, 0],
           boxShadow: [
             '0 0 0 rgba(56,189,248,0)',
-            '0 0 22px rgba(56,189,248,0.35)',
+            '0 0 28px rgba(56,189,248,0.3)',
             '0 0 0 rgba(56,189,248,0)',
           ],
         }}
@@ -137,11 +137,11 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
         href={EVENT.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative z-10 inline-flex items-center gap-4 px-7 py-3.5 mb-12 hover:scale-105 transition-transform"
+        className="relative z-10 inline-flex items-center gap-4 px-8 py-4 mb-16 hover:scale-105 transition-transform"
         style={{
           borderRadius: 100,
           background: 'linear-gradient(135deg, rgba(12,16,25,0.85), rgba(17,12,24,0.72))',
-          border: '1px solid rgba(125,211,252,0.55)',
+          border: '1px solid rgba(56,189,248,0.4)',
         }}
       >
         <motion.span className="w-3 h-3 rounded-full shrink-0"
@@ -153,7 +153,7 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
         <span
           className="text-lg font-bold"
           style={{
-            background: 'linear-gradient(135deg, #fef08a, #fb7185 56%, #c084fc)',
+            background: 'linear-gradient(135deg, #fbbf24, #f472b6 56%, #a78bfa)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -171,8 +171,8 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
           opacity: { duration: 0.7, delay: 0.25, ease: 'easeOut' },
           y: { duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.25 },
         }}
-        className="relative z-10 text-center font-black tracking-tight leading-[1.0] mb-8"
-        style={{ fontSize: 'clamp(3.5rem, 8vw, 7.5rem)' }}
+        className="relative z-10 text-center font-black tracking-tight leading-[1.0] mb-10"
+        style={{ fontSize: 'clamp(3.5rem, 8vw, 8rem)' }}
       >
         <motion.span
           className="text-white"
@@ -183,12 +183,12 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
         </motion.span>
         <br />
         <motion.span
-          className="text-slate-100"
+          className="gradient-text"
           animate={{
             textShadow: [
-              '0 0 8px rgba(59,130,246,0.25)',
-              '0 0 20px rgba(244,114,182,0.5)',
-              '0 0 8px rgba(250,204,21,0.28)',
+              '0 0 12px rgba(167,139,250,0.3)',
+              '0 0 24px rgba(244,114,182,0.4)',
+              '0 0 12px rgba(251,191,36,0.3)',
             ],
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
@@ -204,28 +204,28 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
           opacity: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.4 },
           y: { duration: 0.7, ease: 'easeOut', delay: 0.4 },
         }}
-        className="relative z-10 text-center text-2xl md:text-4xl text-cyan-50 font-light max-w-3xl px-5"
-        style={{ textShadow: '0 0 24px rgba(56,189,248,0.18)' }}
+        className="relative z-10 text-center text-2xl md:text-4xl text-cyan-50/90 font-light max-w-3xl px-5"
+        style={{ textShadow: '0 0 30px rgba(56,189,248,0.15)' }}
       >
         How to Build Reliable AI Systems
       </motion.p>
 
       <motion.div
-        className="absolute bottom-8 left-7 md:left-10 w-[min(94vw,590px)] font-mono text-[11px] md:text-xs leading-relaxed"
+        className="absolute bottom-10 left-8 md:left-12 w-[min(90vw,560px)] font-mono text-[12px] md:text-sm leading-relaxed"
         animate={{
           y: [0, -5, 0],
           boxShadow: [
             '0 0 0 rgba(34,211,238,0)',
-            '0 0 24px rgba(34,211,238,0.22)',
+            '0 0 28px rgba(34,211,238,0.18)',
             '0 0 0 rgba(34,211,238,0)',
           ],
         }}
         transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
         style={{
-          borderRadius: 14,
-          padding: '0.7rem 0.95rem',
-          background: 'linear-gradient(135deg, rgba(10,14,24,0.88), rgba(26,14,33,0.8))',
-          border: '1px solid rgba(125,211,252,0.45)',
+          borderRadius: 16,
+          padding: '1rem 1.25rem',
+          background: 'linear-gradient(135deg, rgba(10,14,24,0.9), rgba(26,14,33,0.82))',
+          border: '1px solid rgba(56,189,248,0.3)',
           color: 'rgba(217,249,255,0.92)',
         }}
       >
@@ -233,16 +233,16 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
           const isCursorLine = index === activeLine && !isResetting;
 
           return (
-            <div key={`code-line-${index}`} className="min-h-[1.4em]">
+            <div key={`code-line-${index}`} className="min-h-[1.5em]">
               {renderTypedTokens(line, visibleCharsPerLine[index])}
               {isCursorLine && (
                 <motion.span
                   className="inline-block ml-0.5"
-                  style={{ color: '#fef08a' }}
+                  style={{ color: '#fbbf24' }}
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{ duration: 0.9, repeat: Infinity }}
                 >
-                  ▍
+                  |
                 </motion.span>
               )}
             </div>
@@ -251,18 +251,18 @@ export function HeroSlide({ onStart }: HeroSlideProps) {
       </motion.div>
 
       <motion.div
-        className="absolute top-10 right-7 md:right-12 font-mono text-xs leading-relaxed text-right px-3 py-2 rounded-xl"
-        animate={{ y: [0, 5, 0], opacity: [0.72, 1, 0.72] }}
+        className="absolute top-12 right-8 md:right-14 font-mono text-sm leading-loose text-right px-4 py-3 rounded-xl"
+        animate={{ y: [0, 5, 0], opacity: [0.7, 1, 0.7] }}
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
         style={{
-          color: 'rgba(199,210,254,0.88)',
-          background: 'rgba(15,23,42,0.46)',
-          border: '1px solid rgba(129,140,248,0.35)',
+          color: 'rgba(199,210,254,0.9)',
+          background: 'rgba(15,23,42,0.5)',
+          border: '1px solid rgba(129,140,248,0.25)',
         }}
       >
-        <div>eval_score: <span style={{ color: '#a5f3fc' }}>0.94</span></div>
-        <div>latency_p99: <span style={{ color: '#fef08a' }}>142ms</span></div>
-        <div>status: <span style={{ color: '#86efac' }}>healthy</span></div>
+        <div>eval_score: <span style={{ color: '#67e8f9' }}>0.94</span></div>
+        <div>latency_p99: <span style={{ color: '#fbbf24' }}>142ms</span></div>
+        <div>status: <span style={{ color: '#34d399' }}>healthy</span></div>
       </motion.div>
     </div>
   );
