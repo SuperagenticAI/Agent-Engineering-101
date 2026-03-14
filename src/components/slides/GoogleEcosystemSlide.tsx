@@ -43,7 +43,7 @@ const codeExamples = [
 
 planner = Agent(
     name="release_planner",
-    model="gemini-2.5-pro",
+    model="gemini-3.1-pro-preview",
     instruction="Plan a production launch.",
     tools=[search_docs, estimate_scope],
 )`,
@@ -116,7 +116,7 @@ export function GoogleEcosystemSlide() {
               <div className="w-10 h-10 rounded-xl bg-white/8 flex items-center justify-center">
                 <example.icon size={18} className="text-white/90" />
               </div>
-              <h3 className="text-xl font-bold text-white">{example.title} example</h3>
+              <h3 className="text-xl font-bold text-white">{example.title}</h3>
             </div>
             <pre className="code-block"><code>{example.code}</code></pre>
           </div>

@@ -12,6 +12,7 @@ export type SlideType =
   | 'google-ecosystem'
   | 'resilient'
   | 'advanced-tracks'
+  | 'agentic-future'
   | 'closing';
 
 export interface SlideLink {
