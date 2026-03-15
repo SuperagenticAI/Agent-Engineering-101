@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { slides } from '../data/slides';
 
 export function useSlideNavigation() {
@@ -16,6 +16,8 @@ export function useSlideNavigation() {
 
   const [currentSlide, setCurrentSlide] = useState(getInitialSlide);
   const [direction, setDirection] = useState(0);
+  const nextRef = useRef<() => void>(() => {});
+  const prevRef = useRef<() => void>(() => {});
 
   const goTo = useCallback(
     (n: number) => {
@@ -29,6 +31,32 @@ export function useSlideNavigation() {
 
   const next = useCallback(() => goTo(currentSlide + 1), [goTo, currentSlide]);
   const prev = useCallback(() => goTo(currentSlide - 1), [goTo, currentSlide]);
+
+  useEffect(() => { nextRef.current = next; }, [next]);
+  useEffect(() => { prevRef.current = prev; }, [prev]);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    let pendingDir = 0;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      pendingDir = e.deltaY > 0 ? 1 : -1;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (pendingDir > 0) nextRef.current();
+        else prevRef.current();
+        pendingDir = 0;
+        timer = null;
+      }, 120);
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
