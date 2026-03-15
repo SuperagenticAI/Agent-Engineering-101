@@ -69,7 +69,7 @@ export function NavigationButtons({ onPrev, onNext, isFirst, isLast }: Navigatio
             exit={{ opacity: 0 }}
             transition={{ delay: 1.5 }}
           >
-            <span className="text-[11px] text-white/40 tracking-widest uppercase">Scroll or use arrow keys</span>
+            <span className="text-[11px] tracking-widest uppercase bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Scroll or use arrow keys</span>
             <motion.div
               className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1"
               animate={{ opacity: [0.4, 1, 0.4] }}
